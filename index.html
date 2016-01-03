@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Git Tutorial</title>
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+</head>
+<body>
+  <div class='container'>
+    <h1>Git Tutorial</h1>
+    <p class='flow-text'>Hey guys, today I’ll be teaching you how to manage Git teams. To do this I am going to cover the following sections:</p>
+
+
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header active" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Basics</div>
+        <div class="collapsible-body">
+          <div class="collection">
+            <a class='collection-item' href='#intro'>What is Git?</a>
+            <a class='collection-item' href='#commands'>General commands</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Branching</div>
+        <div class="collapsible-body">
+          <div class="collection">
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Teams</div>
+        <div class="collapsible-body">
+          <div class="collection">
+            <a class='collection-item' href='#rebase'>Rebase</a>
+            <a class='collection-item' href='#merge'>Merge</a>
+            <a class='collection-item' href='#conflicts'>Merge Conflicts</a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="collapsible-header" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Glossary</div>
+        <div class="collapsible-body">
+          <div class="collection">
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div id='basics'>
+      <h2>Basics</h2>
+      <div id='intro'>
+        <h4>What is Git</h4>
+        <p class='flow-text'>Git is a version control system(VCS), or a way to organize changes over time so you don't have to add
+          uninformative version numbers (such as:_v1, _v2, _v3) to the end of different file versions.</p>
+      </div>
+      <div id='commands'>
+        <h4>Git Commands</h4>
+        <p class='flow-text'>git init - run this command in a folder to turn it into a git repository
+          note: don't init a repo inside an existing repo! (also don't init in your home folder) OR
+          git clone URL - download (clone) a repo from github (or other remote source)</br>Linking an existing repo to github
+
+          Create the repo on github.com (make sure not to check the 'initialize with readme').
+          Follow the instructions on the new repo's webpage to add as a remote:
+          Change directories to the local repo
+          cd ~/path/to/repo
+          Add the github remote, and name it 'origin':
+          git remote add origin URL
+          Push the existing commits up to the remote called 'origin' , and set it to track master branch:
+          git push -u origin master
+          Once linked, you can just run git push to push master branch to master branch</br>
+          Committing
+          Add the files you want to commit to the index (equivalent to checking which files you want to commit in the Github GUI app)
+          git add file1 file2 ..., or git add . will add all changes in the current folder
+          Create the commit:
+          git commit -m "description message for commit"
+          if you omit the -m and message, then git will open an editor for you to write the message in</br>
+          Syncing with a remote (push/pull)
+          git pull [remote] [branch] - fetch and merge changes (from the origin and branch specified) and merge them into the current branch.
+          If origin and branch aren't specified, git will default to the tracking branch (usually origin and the remote branch with the same name as the current branch).
+          If no origin/branch are specified, and no tracking branch is set up, git may tell you to specify
+          'git push [remote] [branch]' - push and merge local changes from the current branch to the specified branch on the remote repo and branch specified.
+          Same rules apply as git pull above.</p>
+        </div>
+      </div>
+      <div id='branching'>
+        <h2>Branching</h2>
+      </div>
+      <div id='teams'>
+        <h2>Teams</h2>
+        <div id='rebase'>
+          <h4>Rebasing</h4>
+        </div>
+        <div id='merge'>
+          <h4>Merging</h4>
+        </div>
+        <div id='conflicts'>
+          <h4>Resolving Conflicts</h4>
+        </div>
+      </div>
+      <div id='glossary'>
+        <h2>Glossary</h2>
+        <p class='flow-text'>repository - collection of commits (save points of the working tree)
+          working tree - the folder (and it's files and sub-folders, that are in the repository)
+          commit - a snapshot of the working tree at a giving time (along with a message of what changed)
+          the index - a staging area where we list changes we want to commit
+          HEAD - what is currently checked out.
+          remote - another repository that can be syncronized with a remote
+          github - a service that hosts git remote repositories, and provides a web app to interact / collaborate on them
+          clone - download an entire remote repository, to be used as a local repository
+          fetch - downloading the set of changes (commits) from a remote repository
+          merge - taking two histories (commits),
+          pull - fetching changes and merging them into the current branch
+          push - sending changes to a remote repository and merging them into the specified branch
+          merge conflict - when two commits conflict, and thus can't be merged automatically.
+          fork - make a copy of a repo on github under a different account, used for OSS collaboration
+          pull request - a github feature which allows a user to suggest and discuss changes to a repo they have forked</p>
+        </div>
+      </div>
+    </body>
+    </html>

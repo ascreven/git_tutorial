@@ -13,11 +13,12 @@
   <div class='container'>
     <h1>Git Tutorial</h1>
     <p class='flow-text'>Hey guys, today I’ll be teaching you how to manage Git teams. To do this I am going to cover the following sections:</p>
-
-
     <ul class="collapsible" data-collapsible="accordion">
       <li>
-        <div class="collapsible-header active" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Basics</div>
+        <div class="collapsible-header active" data-collapsible="expandable"><i class="material-icons">filter_drama</i><a class='collection-item' href='#intro'>Intro</a></div>
+      </li>
+      <li>
+        <div class="collapsible-header active" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Starting Your Project</div>
         <div class="collapsible-body">
           <div class="collection">
             <a class='collection-item' href='#intro'>What is Git?</a>
@@ -43,7 +44,7 @@
         </div>
       </li>
       <li>
-        <div class="collapsible-header" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Glossary</div>
+        <div class="collapsible-header" data-collapsible="expandable"><i class="material-icons">filter_drama</i>Index</div>
         <div class="collapsible-body">
           <div class="collection">
           </div>
@@ -51,11 +52,23 @@
       </li>
     </ul>
     <div id='basics'>
-      <h2>Basics</h2>
+      <h2>Intro</h2>
       <div id='intro'>
         <h4>What is Git</h4>
         <p class='flow-text'>Git is a version control system(VCS), or a way to organize changes over time so you don't have to add
-          uninformative version numbers (such as:_v1, _v2, _v3) to the end of different file versions.</p>
+        uninformative version numbers (such as:_v1, _v2, _v3) to the end of different file versions. Instead, Git allows
+        you to take snapchats of your project at different times, known as <strong id='commit'>commits</strong>. These snapshots
+        are useful for a variety of reasons. Some examples being:</p>
+        <ul>
+          <li><strong>1.) </strong>Your code isn't working and you want to go back to previous working version.</li>
+          <li><strong>2.) </strong>They allow you to monitor your workflow.</li>
+          <li><strong>3.) </strong>You can inspect your code for clarity from a given point in time.</li>
+          <li><strong>4.) </strong>You can use git diff to see what exactly what changed from a given time.</li>
+        </ul>
+        <p class='flow-text'><i class="material-icons">grade</i> To make use of these versions it is very important to leave clear messages for yourself and others
+          about what was going on with your code at the time of the commit. This ensures that you won't have to spend hours
+          figuring out which commit is the one you want to refer back to.
+        </p>
       </div>
       <div id='commands'>
         <h4>Git Commands</h4>
@@ -101,8 +114,13 @@
           <h4>Resolving Conflicts</h4>
         </div>
       </div>
-      <div id='glossary'>
-        <h2>Glossary</h2>
+      <div id='index'>
+        <h2>Index</h2>
+
+              <div class="collection">
+                <a class='collection-item' href='#commit'>Commit</a>
+                <a class='collection-item' href='#commands'>General commands</a>
+              </div>
         <p class='flow-text'>repository - collection of commits (save points of the working tree)
           working tree - the folder (and it's files and sub-folders, that are in the repository)
           commit - a snapshot of the working tree at a giving time (along with a message of what changed)
